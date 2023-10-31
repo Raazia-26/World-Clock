@@ -23,6 +23,19 @@ function updateTime() {
       "h:m:ss [<small>]A[</small>]"
     );
   }
+
+  //dubai
+  let dubaiElement = document.querySelector("#dubai");
+  if (dubaiElement) {
+    let dubaiDateElement = dubaiElement.querySelector(".date");
+    let dubaiTimeElement = dubaiElement.querySelector(".time");
+    let dubaiTime = moment().tz("Asia/Dubai");
+    dubaiDateElement.innerHTML = dubaiTime.format("dddd Do YYYY");
+
+    dubaiTimeElement.innerHTML = dubaiTime.format(
+      "h:m:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function showHome() {
