@@ -24,8 +24,10 @@ function updateTime() {
     );
   }
 }
-updateTime();
-setInterval(updateTime, 1000);
+
+function showHome() {
+  window.location.reload();
+}
 
 function showTime(event) {
   let selectCity = event.target.value;
@@ -47,8 +49,15 @@ function showTime(event) {
       <div class="time">
         ${cityTime.format("h:m:ss")} <small>${cityTime.format("A")}</small>
       </div>
-    </div>`;
+    </div>
+    `;
+
+  let homepageElement = document.querySelector(".homepage");
+  homepageElement.innerHTML = ` <a>Back to homepage</a>`;
+  homepageElement.addEventListener("click", showHome);
 }
 
 let citySelect = document.querySelector("#countries");
 citySelect.addEventListener("change", showTime);
+updateTime();
+setInterval(updateTime, 1000);

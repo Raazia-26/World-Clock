@@ -56,6 +56,14 @@ small {
   vertical-align: middle;
   font-size: 20px;
 }
+
+.homepage {
+  text-decoration: underline;
+  color: blueviolet;
+}
+.homepage:hover {
+  cursor: pointer;
+}
 footer {
   text-align: center;
   margin: 20px;
