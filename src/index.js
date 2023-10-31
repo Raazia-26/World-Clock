@@ -28,30 +28,15 @@ updateTime();
 setInterval(updateTime, 1000);
 
 function showTime(event) {
-  if (event.target.value === "current_loc") {
-    let localtime = moment.tz.guess();
-    let localCity = localtime.split("/")[1].replace("_", " ");
-    let showcityTime = document.querySelector("#cities");
-    showcityTime.innerHTML = `<div class="city" >
-      <div>
-        <h2> ${localCity}
-          
-        </h2>
-        <div class="date">${moment().tz(localtime).format("dddd Do YYYY")}</div>
-      </div>
-      <div class="time">
-        ${moment().tz(localtime).format("hh:m:ss")} <small>${moment()
-      .tz(localtime)
-      .format("A")}</small>
-      </div>
-    </div>`;
+  let selectCity = event.target.value;
+  if (selectCity === "current_loc") {
+    selectCity = moment.tz.guess();
   }
 
-  let selectCity = event.target.value;
   let cityName = selectCity.split("/")[1].replace("_", " ");
 
   let cityTime = moment().tz(selectCity);
-  showcityTime = document.querySelector("#cities");
+  let showcityTime = document.querySelector("#cities");
   showcityTime.innerHTML = `<div class="city" >
       <div>
         <h2> ${cityName}
@@ -60,7 +45,7 @@ function showTime(event) {
         <div class="date">${cityTime.format("dddd Do YYYY")}</div>
       </div>
       <div class="time">
-        ${cityTime.format("hh:m:ss")} <small>${cityTime.format("A")}</small>
+        ${cityTime.format("h:m:ss")} <small>${cityTime.format("A")}</small>
       </div>
     </div>`;
 }
