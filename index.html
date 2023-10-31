@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>World Clock</title>
   <link rel="stylesheet" href="src/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data-1970-2030.min.js"></script>
 </head>
 
 <body>
@@ -23,19 +26,19 @@
 
 
 
-    <div class="city">
+    <div class="city" id="los-angeles">
       <div>
         <h2> Los Angeles
           <img src="https://cdn-icons-png.flaticon.com/128/2276/2276737.png" alt="" width="20px">
         </h2>
-        <div class="date">August 15th 2022</div>
+        <div class="date"></div>
       </div>
       <div class="time">
         1:45:15 <small> AM</small>
       </div>
     </div>
 
-    <div class="city">
+    <div class="city" id="sydney">
       <div>
         <h2> Sydney
           <img src="https://cdn-icons-png.flaticon.com/128/11666/11666262.png" alt="" width="20px">
